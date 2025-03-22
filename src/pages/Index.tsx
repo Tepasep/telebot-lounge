@@ -24,7 +24,7 @@ const fetchTransactions = async (userId: number): Promise<Transaction[]> => {
     description: Math.random() > 0.5 
       ? `Reward for activity ${i + 1}` 
       : `Used for purchase ${i + 1}`,
-    type: Math.random() > 0.3 ? 'credit' : 'debit',
+    type: Math.random() > 0.3 ? 'credit' as const : 'debit' as const,
     createdAt: new Date(Date.now() - Math.random() * 604800000).toISOString() // Within the last week
   })).sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
 };
