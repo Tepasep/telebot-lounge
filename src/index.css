@@ -43,23 +43,22 @@
   }
 
   body {
-    @apply bg-tg-bg text-tg-text font-sans antialiased;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    @apply bg-tg-bg text-tg-text font-sans;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
   }
 
-  /* Smooth scrolling */
+  /* Smooth scrolling - disabled for faster performance */
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
   }
 
-  /* Glass card effect */
+  /* Glass card effect - simplified */
   .glass-card {
-    @apply bg-tg-card bg-opacity-80 backdrop-blur-md;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    @apply bg-tg-card;
   }
   
-  /* Custom scrollbar */
+  /* Custom scrollbar - simplified */
   ::-webkit-scrollbar {
     width: 4px;
   }

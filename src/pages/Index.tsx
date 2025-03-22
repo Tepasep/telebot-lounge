@@ -8,10 +8,7 @@ import { Transaction, User } from '@/types';
 
 // Mock API functions - replace with actual API calls
 const fetchUserData = async (userId: number): Promise<User> => {
-  // Simulate API call delay
-  await new Promise(resolve => setTimeout(resolve, 1000));
-  
-  // Mock user data
+  // Return mock user data immediately
   return {
     id: userId,
     stars: Math.floor(Math.random() * 10000)
@@ -19,10 +16,7 @@ const fetchUserData = async (userId: number): Promise<User> => {
 };
 
 const fetchTransactions = async (userId: number): Promise<Transaction[]> => {
-  // Simulate API call delay
-  await new Promise(resolve => setTimeout(resolve, 1500));
-  
-  // Mock transactions data
+  // Return mock transactions immediately
   return Array.from({ length: 10 }, (_, i) => ({
     id: i + 1,
     userId,
@@ -58,24 +52,21 @@ const Index = () => {
   const fetchData = async (id: number) => {
     setIsLoading(true);
     try {
-      // Fetch user data and transactions in parallel
-      const [userData, transactionsData] = await Promise.all([
-        fetchUserData(id),
-        fetchTransactions(id)
-      ]);
+      // Fetch data without artificial delays
+      const userData = await fetchUserData(id);
+      const transactionsData = await fetchTransactions(id);
       
       setUser(userData);
       setTransactions(transactionsData);
     } catch (error) {
       console.error('Error fetching data:', error);
-      // Show error state
     } finally {
       setIsLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen bg-tg-bg text-tg-text overflow-hidden">
+    <div className="min-h-screen bg-tg-bg text-tg-text">
       <div className="max-w-md mx-auto pb-8">
         <Header title="Star Lounge" />
         

@@ -17,9 +17,7 @@ const TransactionItem: React.FC<TransactionItemProps> = ({ transaction }) => {
   });
   
   return (
-    <div className="flex items-center py-3 border-b border-tg-card last:border-0 animate-slide-up" style={{ 
-      animationDelay: `${100 + (transaction.id % 10) * 50}ms` 
-    }}>
+    <div className="flex items-center py-3 border-b border-tg-card last:border-0">
       <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${isCredit ? 'bg-green-800/30' : 'bg-red-800/30'}`}>
         {isCredit ? (
           <ArrowUp className="h-4 w-4 text-green-400" />

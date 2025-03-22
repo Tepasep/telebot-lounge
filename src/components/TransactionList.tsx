@@ -14,19 +14,19 @@ const TransactionList: React.FC<TransactionListProps> = ({
 }) => {
   if (isLoading) {
     return (
-      <div className="glass-card rounded-xl overflow-hidden animate-slide-up delay-200">
+      <div className="glass-card rounded-xl overflow-hidden">
         <div className="p-4 border-b border-tg-card">
           <h3 className="text-lg font-medium">Recent Transactions</h3>
         </div>
         <div className="p-4">
           {[...Array(3)].map((_, index) => (
             <div key={index} className="py-3 border-b border-tg-card last:border-0 flex items-center">
-              <div className="w-8 h-8 rounded-full bg-tg-card animate-pulse"></div>
+              <div className="w-8 h-8 rounded-full bg-tg-card"></div>
               <div className="ml-3 flex-grow">
-                <div className="h-4 w-3/4 bg-tg-card animate-pulse rounded-md mb-2"></div>
-                <div className="h-3 w-1/2 bg-tg-card animate-pulse rounded-md"></div>
+                <div className="h-4 w-3/4 bg-tg-card mb-2"></div>
+                <div className="h-3 w-1/2 bg-tg-card"></div>
               </div>
-              <div className="h-4 w-16 bg-tg-card animate-pulse rounded-md"></div>
+              <div className="h-4 w-16 bg-tg-card"></div>
             </div>
           ))}
         </div>
@@ -36,7 +36,7 @@ const TransactionList: React.FC<TransactionListProps> = ({
 
   if (transactions.length === 0) {
     return (
-      <div className="glass-card rounded-xl overflow-hidden animate-slide-up delay-200">
+      <div className="glass-card rounded-xl overflow-hidden">
         <div className="p-4 border-b border-tg-card">
           <h3 className="text-lg font-medium">Recent Transactions</h3>
         </div>
@@ -48,7 +48,7 @@ const TransactionList: React.FC<TransactionListProps> = ({
   }
 
   return (
-    <div className="glass-card rounded-xl overflow-hidden animate-slide-up delay-200">
+    <div className="glass-card rounded-xl overflow-hidden">
       <div className="p-4 border-b border-tg-card">
         <h3 className="text-lg font-medium">Recent Transactions</h3>
       </div>
